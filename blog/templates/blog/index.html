@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if posts %}
+    {% for post in posts %}
+    <div style="border: solid black; margin-bottom: 1%;">
+        <h1>{{post.heading}}</h1>
+        <h4>{{post.author}}</h4>
+        <p>{{post.category}}</p>
+        <p style="color: gray;">Date of creation: {{post.create_Date}}<br>Date of publication: {{post.publish_Date}}</p>
+        <p>{{post.text}}</p>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% if authors %}
+    {% for author in authors %}
+    <p>{{author.name}} {{author.surname}} ({{author.nickname}})</p>
+    {% endfor %}
+    {% endif %}
+
+    {% if categories %}
+    {% for category in categories %}
+    <p>{{category.name}}</p>
+    {% endfor %}
+    {% endif %}
+</body>
+</html>
