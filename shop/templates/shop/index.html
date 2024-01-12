@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<body>
+    {% if products %}
+    <h1>PRODUCTS</h1>
+    {% for product in products %}
+    <div style="border: black solid; border-radius: 1em;">
+        <h2>{{product.name}}</h2>
+        <h4 style="color: gray;">{{product.category}}</h4>
+        <p>{{product.description}}</p>
+        <h3 style="color: red;font-weight: bold;">{{product.price}} €</h3>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% if categories %}
+    <h1>CATEGORIES</h1>
+    {% for category in categories %}
+    <p>{{category.name}}</p>
+    {% endfor %}
+    {% endif %}
+
+    {% if customers %}
+    <h1>CUSTOMERS</h1>
+    {% for customer in customers %}
+    <p>{{customer.name}} {{customer.surname}}</p>
+    {% endfor %}
+    {% endif %}
+
+    {% if orders %}
+    <h1>ORDERS</h1>
+    {% for order in orders %}
+    <div style="border: black solid; border-radius: 1em;">
+        <p>Customer: {{order.customer}}</p>
+        <p>Product: {{order.product}}</p>
+        <p style="color: gray;">{{order.create_Date}}</p>
+    </div>
+    {% endfor %}
+    {% endif %}
+</body>
+</html>

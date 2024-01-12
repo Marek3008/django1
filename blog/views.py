@@ -12,4 +12,4 @@ def drawAuthors(request):
     return render(request, "blog/index.html", {"authors" : authors})
 
 def drawCategories(request):
-    return render(request, "blog/index.html", {"categories" : categories})
+    return render(request, "blog/index.html", {"categories" : categories, "posts" : posts})
