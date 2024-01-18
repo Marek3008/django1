@@ -1,0 +1,23 @@
+.product{
+    border: black solid; 
+    border-radius: 1em;
+    margin-bottom: 2%;
+}
+
+.order{
+    border: black solid;
+    border-radius: 1em;
+}
+
+.category{
+    color: gray;
+}
+
+.price{
+    color: red;
+    font-weight: bold;
+}
+
+.createDate{
+    color: gray;
+}

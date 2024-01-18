@@ -1,0 +1,13 @@
+body{
+    background-color: cyan;
+}
+
+.part{
+    border: solid green 2px;
+    border-radius: 4px;
+    margin-bottom: 2%;
+}
+
+.content{
+    margin-left: 1%;
+}

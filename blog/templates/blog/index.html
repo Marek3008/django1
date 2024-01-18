@@ -9,6 +9,7 @@
 </head>
 <body>
     {% if posts and not categories and not authors %}
+    <h1>POSTS</h1>
     {% for post in posts %}
     <div class="post">
         <h1 class="post-content">{{post.heading}}</h1>
@@ -21,8 +22,9 @@
     {% endif %}
 
     {% if authors %}
+    <h1>AUTHORS</h1>
         {% for author in authors %}
-            <p>{{author.name}} {{author.surname}} ({{author.nickname}})</p>
+            <p class="post-content">{{author.name}} {{author.surname}} ({{author.nickname}})</p>
         {% endfor %}
     {% endif %}
 

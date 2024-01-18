@@ -1,7 +1,9 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'skola/style.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
 </head>
@@ -9,30 +11,36 @@
     <h1>Moja školička</h1>
 
     {% if triedy %}
-    <h2>Triedy</h2>
-    <ul>
-        {% for trieda in triedy %}
-        <li>{{trieda}}</li>
-        {% endfor %}
-    </ul>
+    <div class="part">
+        <h2 class="content">Triedy</h2>
+        <ul>
+            {% for trieda in triedy %}
+            <li class="content">{{trieda}}</li>
+            {% endfor %}
+        </ul>
+    </div>
     {% endif %}
 
     {% if ucitelia %}
-    <h2>Učitelia</h2>
-    <ul>
-        {% for ucitel in ucitelia %}
-        <li>{{ucitel}}</li>
-        {% endfor %}
-    </ul>
+    <div class="part">
+        <h2 class="content">Učitelia</h2>
+        <ul>
+            {% for ucitel in ucitelia %}
+            <li class="content">{{ucitel}}</li>
+            {% endfor %}
+        </ul>
+    </div>
     {% endif %}
 
     {% if studenti %}
-    <h2>Študenti</h2>
-    <ul>
-        {% for student in studenti %}
-        <li>{{student}}</li>
-        {% endfor %}
-    </ul>
+    <div class="part">
+        <h2 class="content">Študenti</h2>
+        <ul>
+            {% for student in studenti %}
+            <li class="content">{{student}}</li>
+            {% endfor %}
+        </ul>
+    </div>
     {% endif %}
 
 </body>
