@@ -11,3 +11,13 @@ body{
 .content{
     margin-left: 1%;
 }
+
+.obrazok{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    width: 50%;
+}

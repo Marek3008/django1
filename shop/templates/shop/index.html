@@ -12,10 +12,10 @@
     <h1>PRODUCTS</h1>
     {% for product in products %}
     <div class="product">
-        <h2>{{product.name}}</h2>
-        <h4 class="category">{{product.category}}</h4>
-        <p>{{product.description}}</p>
-        <h3 class="price">{{product.price}} €</h3>
+        <h2 class="content">{{product.name}}</h2>
+        <h4 class="category content">{{product.category}}</h4>
+        <p class="content">{{product.description}}</p>
+        <h3 class="price content">{{product.price}} €</h3>
     </div>
     {% endfor %}
     {% endif %}
@@ -44,5 +44,8 @@
     </div>
     {% endfor %}
     {% endif %}
+    <div class="obrazok">
+        <img src="{% static 'shop/eshop-zadarmo.png' %}" alt="">
+    </div>
 </body>
 </html>
