@@ -19,3 +19,17 @@ def vypisTriedy(request):
 def vypisUcitel(request):
     ucitelia = Ucitel.objects.all()
     return render(request, "skola/index.html", {"ucitelia" : ucitelia})
+
+def vypisTrieda(request, trieda):
+    triedaObj = Trieda.objects.get(nazov=trieda)
+    studenti = Student.objects.filter(trieda_id=triedaObj.pk).order_by("priezvisko")
+    studentList = []
+    for student in studenti:
+        studentList.append(f"{student.meno} {student.priezvisko}")
+
+    ucitel = Ucitel.objects.get(trieda_id=triedaObj.pk)
+    ucitel = f"{ucitel.titul} {ucitel.meno} {ucitel.priezvisko}"
+
+    #return HttpResponse(f"{trieda}<br>{ucitel}<br>{studentList}")
+
+    return render(request, "skola/trieda.html", {"trieda" : trieda, "ucitel" : ucitel, "studenti" : studentList})

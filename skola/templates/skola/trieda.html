@@ -12,10 +12,10 @@
 
     {% if triedy %}
     <div class="part">
-        <h2 class="content"><a href="{% url 'vypisTriedy' %}">Triedy</a></h2>
+        <h2 class="content">Triedy</h2>
         <ul>
             {% for trieda in triedy %}
-            <li class="content"><a href="{% url 'vypisTrieda' trieda=trieda %}">{{trieda}}</a></li>
+            <li class="content">{{trieda}}</li>
             {% endfor %}
         </ul>
     </div>
@@ -23,7 +23,7 @@
 
     {% if ucitelia %}
     <div class="part">
-        <h2 class="content"><a href="{% url 'vypisUcitel' %}">Učitelia</a></h2>
+        <h2 class="content">Učitelia</h2>
         <ul>
             {% for ucitel in ucitelia %}
             <li class="content">{{ucitel}}</li>
@@ -34,12 +34,13 @@
 
     {% if studenti %}
     <div class="part">
-        <h2 class="content">Študenti</h2>
+        <h2 class="content">Študenti {{trieda}}</h2>
         <ul>
             {% for student in studenti %}
             <li class="content">{{student}}</li>
             {% endfor %}
         </ul>
+        <strong class="content">Triedny učiteľ:</strong>{{ucitel}}
     </div>
     {% endif %}
     <div class="obrazok">
