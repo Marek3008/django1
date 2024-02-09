@@ -30,6 +30,4 @@ def vypisTrieda(request, trieda):
     ucitel = Ucitel.objects.get(trieda_id=triedaObj.pk)
     ucitel = f"{ucitel.titul} {ucitel.meno} {ucitel.priezvisko}"
 
-    #return HttpResponse(f"{trieda}<br>{ucitel}<br>{studentList}")
-
     return render(request, "skola/trieda.html", {"trieda" : trieda, "ucitel" : ucitel, "studenti" : studentList})

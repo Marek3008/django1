@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titel</title>
+</head>
+<body>
+    <h1>Kalkulačka</h1>
+
+    <form method="POST">   
+        {% csrf_token %}
+        <input name="a" type="text">
+
+        <select name="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+
+        <input type="text" name="b">
+
+        <input type="submit">
+
+    </form>
+    <h1>{{a}} {{operator}} {{b}} = {{vysledok}}</h1>
+</body>
+</html>
