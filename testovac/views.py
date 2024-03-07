@@ -17,8 +17,12 @@ def renderEquation(request):
 
         return render(request, "testovac/index.html", {"a" : a, "b" : b, "operator" : operator})
     
-    else:         
-        vysledok = float(request.POST["vysledok"])
+    else:      
+        try:
+            vysledok = float(request.POST["vysledok"])
+        except ValueError:
+            problem = True
+            return render(request, "testovac/index.html", {"problem" : problem})
 
         if vysledok == spravnyVysledok:
             spravnost = True

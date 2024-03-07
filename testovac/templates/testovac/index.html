@@ -6,6 +6,10 @@
     <title>Document</title>
 </head>
 <body>
+    {% if problem %}
+    <h1>zadaj číslo!! (desatinné sa píše s bodkou)</h1>
+    <a href="">vrátiť sa</a>
+    {% endif %}
     {% if a and b and operator %}
     <p>{{a}} {{operator}} {{b}} = ?</p>
     <form method="post">
