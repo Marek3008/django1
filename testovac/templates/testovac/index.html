@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if a and b and operator %}
+    <p>{{a}} {{operator}} {{b}} = ?</p>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="vysledok">
+        <input type="submit" value="odovzdaj">
+    </form>
+    {% endif %}
+
+    {% if spravnost == True or spravnost == False %}
+        {% if spravnost == True %}
+        <h1>správne</h1>
+        {% endif %}
+        {% if spravnost == False %}
+        <h1>nesprávne</h1>
+        {% endif %}
+        
+    
+    <a href="">opakuj</a>
+    {% endif %}
+</body>
+</html>

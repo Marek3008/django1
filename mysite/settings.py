@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'skola',
     'blog',
     'shop',
-    'kalkulacka'
+    'kalkulacka',
+    'testovac'
 ]
 
 MIDDLEWARE = [
