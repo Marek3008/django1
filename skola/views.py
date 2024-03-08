@@ -1,11 +1,12 @@
 from django.shortcuts import render, HttpResponse
 from . models import Student, Ucitel, Trieda
 
-def vypisSkola(request):
-    studenti = Student.objects.all().order_by("priezvisko")
-    ucitelia = Ucitel.objects.all().order_by("priezvisko")
-    triedy = Trieda.objects.all().order_by("nazov")
+studenti = Student.objects.all().order_by("priezvisko")
+ucitelia = Ucitel.objects.all().order_by("priezvisko")
+triedy = Trieda.objects.all().order_by("nazov")
 
+
+def vypisSkola(request):
     return render(request, "skola/index.html", {"studenti" : studenti, "ucitelia" : ucitelia, "triedy" : triedy})
 
 def vypisStudent(request):

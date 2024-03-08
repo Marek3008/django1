@@ -1,49 +1,41 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'skola/style.css' %}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-</head>
-<body>
-    <h1>Moja školička</h1>
+{% block content %}
+<h1>Moja školička</h1>
 
-    {% if triedy %}
-    <div class="part">
-        <h2 class="content"><a href="{% url 'vypisTriedy' %}">Triedy</a></h2>
-        <ul>
-            {% for trieda in triedy %}
-            <li class="content"><a href="{% url 'vypisTrieda' trieda=trieda %}">{{trieda}}</a></li>
-            {% endfor %}
-        </ul>
-    </div>
-    {% endif %}
+{% if triedy %}
+<div class="part">
+    <h2 class="content"><a href="{% url 'vypisTriedy' %}">Triedy</a></h2>
+    <ul>
+        {% for trieda in triedy %}
+        <li class="content"><a href="{% url 'vypisTrieda' trieda=trieda %}">{{trieda}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
 
-    {% if ucitelia %}
-    <div class="part">
-        <h2 class="content"><a href="{% url 'vypisUcitel' %}">Učitelia</a></h2>
-        <ul>
-            {% for ucitel in ucitelia %}
-            <li class="content">{{ucitel}}</li>
-            {% endfor %}
-        </ul>
-    </div>
-    {% endif %}
+{% if ucitelia %}
+<div class="part">
+    <h2 class="content"><a href="{% url 'vypisUcitel' %}">Učitelia</a></h2>
+    <ul>
+        {% for ucitel in ucitelia %}
+        <li class="content">{{ucitel}}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
 
-    {% if studenti %}
-    <div class="part">
-        <h2 class="content">Študenti</h2>
-        <ul>
-            {% for student in studenti %}
-            <li class="content">{{student}}</li>
-            {% endfor %}
-        </ul>
-    </div>
-    {% endif %}
-    <div class="obrazok">
-        <img src="{% static 'skola/skola.jpg' %}" alt="">
-    </div>
-</body>
-</html>
+{% if studenti %}
+<div class="part">
+    <h2 class="content">Študenti</h2>
+    <ul>
+        {% for student in studenti %}
+        <li class="content">{{student}}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+<div class="obrazok">
+    <img src="{% static 'skola/skola.jpg' %}" alt="">
+</div>
+{% endblock %}
