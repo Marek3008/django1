@@ -26,7 +26,7 @@ class Ucitel(models.Model):
 
     def __str__(self):
         if self.trieda:
-            return f"{self.titul} {self.meno} {self.priezvisko} {self.trieda}"
+            return f"{self.titul} {self.meno} {self.priezvisko}"
         
         else:
             return f"{self.titul} {self.meno} {self.priezvisko}"

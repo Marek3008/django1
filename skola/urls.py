@@ -7,5 +7,7 @@ urlpatterns = [
     path('triedy/', views.vypisTriedy, name="vypisTriedy"),
     path('studenti/', views.vypisStudent, name="vypisStudent"),
     path('ucitelia/', views.vypisUcitel, name="vypisUcitel"),
-    path('triedy/<trieda>/', views.vypisTrieda, name="vypisTrieda")
+    path('triedy/<trieda>/', views.vypisTrieda, name="vypisTrieda"),
+    path('studenti/<student>/', views.vypisOStudentoviPodlaTriedy, name="vypisOStudentoviPodlaTriedy"),
+    path('ucitelia/<ucitel>', views.vypisOUciteloviPodlaTriedy, name="vypisOUciteloviPodlaTriedy")
 ]

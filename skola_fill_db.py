@@ -10,7 +10,7 @@ triedy = []
 for rocnik in range(1, 5):
     for pismenko in ['A', 'B', 'C', 'D']:
         triedy.append(f"{rocnik}.{pismenko}")
-        #Trieda.objects.create(nazov=f"{rocnik}.{pismenko}")
+        Trieda.objects.create(nazov=f"{rocnik}.{pismenko}")
 
 
 fileMena = open("mena.txt", 'r', encoding="utf-8")
@@ -19,7 +19,7 @@ mena = fileMena.read().splitlines()
 filePriezviska = open("priezviska.txt", 'r', encoding="utf-8")
 priezviska = filePriezviska.read().splitlines()
 
-"""
+
 for i in range(20):
     meno = random.choice(mena)
     priezvisko = random.choice(priezviska)
@@ -31,7 +31,7 @@ for i in range(20):
 
     else:
         Ucitel.objects.create(titul=titul, meno=meno, priezvisko=priezvisko)
-"""
+
 
 for i in range(100):
     meno = random.choice(mena)

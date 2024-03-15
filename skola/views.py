@@ -28,7 +28,29 @@ def vypisTrieda(request, trieda):
     for student in studenti:
         studentList.append(f"{student.meno} {student.priezvisko}")
 
+    print(studentList)
+    print(trieda)
+
     ucitel = Ucitel.objects.get(trieda_id=triedaObj.pk)
     ucitel = f"{ucitel.titul} {ucitel.meno} {ucitel.priezvisko}"
 
     return render(request, "skola/trieda.html", {"trieda" : trieda, "ucitel" : ucitel, "studenti" : studentList})
+
+def vypisOStudentoviPodlaTriedy(request, student):
+    meno = str(student).split()[0]
+    priezvisko = str(student).split()[1]
+    
+    student = Student.objects.get(meno=meno, priezvisko=priezvisko)
+
+    return render(request, "skola/student.html", {"student" : student})
+
+def vypisOUciteloviPodlaTriedy(request, ucitel):
+    meno = str(ucitel).split()[-2]
+    priezvisko = str(ucitel).split()[-1]
+
+    print(meno)
+    print(priezvisko)
+
+    ucitel = Ucitel.objects.get(meno=meno, priezvisko=priezvisko)
+
+    return render(request, "skola/ucitel.html", {"ucitel" : ucitel})

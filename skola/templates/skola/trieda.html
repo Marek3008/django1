@@ -28,7 +28,7 @@
     <h2 class="content">Študenti {{trieda}}</h2>
     <ul>
         {% for student in studenti %}
-        <li class="content">{{student}}</li>
+        <li class="content"><a href="{% url 'vypisOStudentoviPodlaTriedy' student=student %}">{{student}}</a></li>
         {% endfor %}
     </ul>
     <strong class="content">Triedny učiteľ:</strong>{{ucitel}}
