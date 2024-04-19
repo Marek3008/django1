@@ -43,8 +43,11 @@ def vypisOStudentoviPodlaTriedy(request, student):
     
     studentObj = Student.objects.get(meno=meno, priezvisko=priezvisko)
     kruzky = Kruzok.objects.filter(student=studentObj.pk)
+    triednyUcitel = Ucitel.objects.get(trieda_id=studentObj.trieda_id)
 
-    return render(request, "skola/student.html", {"student" : student, "kruzky" : kruzky})
+    print(studentObj.trieda)
+
+    return render(request, "skola/student.html", {"student" : studentObj, "kruzky" : kruzky, "ucitel" : triednyUcitel})
 
 def vypisOUciteloviPodlaTriedy(request, ucitel):
     meno = str(ucitel).split()[-2]

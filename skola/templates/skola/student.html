@@ -1,13 +1,15 @@
 {% extends "base.html" %}
 {% block student %}
 <h1>{{student.meno}} {{student.priezvisko}}</h1>
-<h1>Trieda: {{student.trieda}}</h1>
+<a href="{% url  'vypisTrieda' trieda=student.trieda %}"><h2>Trieda: {{student.trieda}}</h2></a>
+<h2>Triedny učiteľ: {{ucitel.meno}} {{ucitel.priezvisko}}</h2>
+<h2>Bydlisko: {{student.ulica}} {{student.cislo_domu}}, {{student.psc}} {{student.obec}}</h2>
 {% if kruzky %}
     {% if kruzky|length == 1 %}
-    <h1>Krúžok</h1>
+    <h2>Krúžok:</h2>
     {% endif %}
     {% if kruzky|length != 1 %}
-    <h1>Krúžky</h1>
+    <h2>Krúžky:</h2>
     {% endif %}
     <ul>
         {% for kruzok in kruzky %}
