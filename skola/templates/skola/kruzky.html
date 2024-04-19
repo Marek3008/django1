@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block kruzky %}
+<h1>Krúžky</h1>
+<ul>
+    {% for kruzok in kruzky %}
+    <li><a href="{% url 'vypisKruzok' kruzok=kruzok %}">{{kruzok}}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

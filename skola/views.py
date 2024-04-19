@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse
-from . models import Student, Ucitel, Trieda
+from . models import *
 
 studenti = Student.objects.all().order_by("priezvisko")
 ucitelia = Ucitel.objects.all().order_by("priezvisko")
@@ -40,9 +40,11 @@ def vypisOStudentoviPodlaTriedy(request, student):
     meno = str(student).split()[0]
     priezvisko = str(student).split()[1]
     
-    student = Student.objects.get(meno=meno, priezvisko=priezvisko)
+    
+    studentObj = Student.objects.get(meno=meno, priezvisko=priezvisko)
+    kruzky = Kruzok.objects.filter(student=studentObj.pk)
 
-    return render(request, "skola/student.html", {"student" : student})
+    return render(request, "skola/student.html", {"student" : student, "kruzky" : kruzky})
 
 def vypisOUciteloviPodlaTriedy(request, ucitel):
     meno = str(ucitel).split()[-2]
@@ -54,3 +56,15 @@ def vypisOUciteloviPodlaTriedy(request, ucitel):
     ucitel = Ucitel.objects.get(meno=meno, priezvisko=priezvisko)
 
     return render(request, "skola/ucitel.html", {"ucitel" : ucitel})
+
+def vypisKruzky(request):
+    kruzky = Kruzok.objects.all()
+
+    return render(request, "skola/kruzky.html", {"kruzky" : kruzky})
+
+def vypisKruzok(request, kruzok):
+    kruzokObj = Kruzok.objects.get(nazov=kruzok)
+    studenti = Student.objects.filter(kruzok=kruzokObj.pk)
+    ucitel = kruzokObj.ucitel
+
+    return render(request, "skola/kruzok.html", {"kruzok" : kruzokObj, "studenti" : studenti, "ucitel" : ucitel})

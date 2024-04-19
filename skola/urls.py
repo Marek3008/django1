@@ -9,5 +9,7 @@ urlpatterns = [
     path('ucitelia/', views.vypisUcitel, name="vypisUcitel"),
     path('triedy/<trieda>/', views.vypisTrieda, name="vypisTrieda"),
     path('studenti/<student>/', views.vypisOStudentoviPodlaTriedy, name="vypisOStudentoviPodlaTriedy"),
-    path('ucitelia/<ucitel>', views.vypisOUciteloviPodlaTriedy, name="vypisOUciteloviPodlaTriedy")
+    path('ucitelia/<ucitel>', views.vypisOUciteloviPodlaTriedy, name="vypisOUciteloviPodlaTriedy"),
+    path('kruzky/', views.vypisKruzky, name="vypisKruzky"),
+    path('kruzky/<kruzok>', views.vypisKruzok, name="vypisKruzok")
 ]

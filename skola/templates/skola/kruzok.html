@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block kruzok %}
+<h1>{{kruzok.nazov}}</h1>
+<h2>{{ucitel}}</h2>
+<ul>
+    {% for student in studenti %}
+    <li>
+        {{student}}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
