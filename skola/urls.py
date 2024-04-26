@@ -11,5 +11,6 @@ urlpatterns = [
     path('studenti/<student>/', views.vypisOStudentoviPodlaTriedy, name="vypisOStudentoviPodlaTriedy"),
     path('ucitelia/<ucitel>', views.vypisOUciteloviPodlaTriedy, name="vypisOUciteloviPodlaTriedy"),
     path('kruzky/', views.vypisKruzky, name="vypisKruzky"),
-    path('kruzky/<kruzok>', views.vypisKruzok, name="vypisKruzok")
+    path('kruzky/<kruzok>', views.vypisKruzok, name="vypisKruzok"),
+    path('uzivatel-pridaj/', views.pridajPouzivatel, name="pridajPouzivatel"),
 ]

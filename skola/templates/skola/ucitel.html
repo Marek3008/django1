@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block ucitel %}
 <h1>{{ucitel.meno}} {{ucitel.priezvisko}}</h1>
-<a href=""><h1>Trieda: {{ucitel.trieda}}</h1></a>
+<a href="{% url "vypisTrieda" trieda=ucitel.trieda %}"><h1>Trieda: {{ucitel.trieda}}</h1></a>
+<h3>Dátum narodenia: {{ucitel.datum_narodenia}}</h3>
 {% endblock %}

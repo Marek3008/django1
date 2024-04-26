@@ -4,6 +4,7 @@
 <a href="{% url  'vypisTrieda' trieda=student.trieda %}"><h2>Trieda: {{student.trieda}}</h2></a>
 <h2>Triedny učiteľ: {{ucitel.meno}} {{ucitel.priezvisko}}</h2>
 <h2>Bydlisko: {{student.ulica}} {{student.cislo_domu}}, {{student.psc}} {{student.obec}}</h2>
+<h3>Dátum narodenia: {{student.datum_narodenia}}</h3>
 {% if kruzky %}
     {% if kruzky|length == 1 %}
     <h2>Krúžok:</h2>

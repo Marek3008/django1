@@ -18,7 +18,7 @@
 <div class="part">
     <h2 class="content">Učitelia</h2>
     <ul>
-        <li class="content">{{ucitel}}</li>
+        <a href="{% url "vypisOUciteloviPodlaTriedy" ucitel=ucitel %}"><li class="content">{{ucitel}}</li></a>
     </ul>
 </div>
 {% endif %}
