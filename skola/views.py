@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from . models import *
+from . forms import PokusnyKralikForm
 
 studenti = Student.objects.all().order_by("priezvisko")
 ucitelia = Ucitel.objects.all().order_by("priezvisko")
@@ -71,3 +72,28 @@ def vypisKruzok(request, kruzok):
     ucitel = kruzokObj.ucitel
 
     return render(request, "skola/kruzok.html", {"kruzok" : kruzokObj, "studenti" : studenti, "ucitel" : ucitel})
+
+def pridajPouzivatel(request):
+    ## html forms
+
+    # if request.method == "POST":
+    #     PokusnyKralik(
+    #         meno = request.POST["meno"],
+    #         priezvisko = request.POST["priezvisko"],
+    #         email = request.POST["email"],
+    #         datum = request.POST["datum"]
+    #     ).save()
+
+    #     return HttpResponse("ulozil sa")
+    
+    # return render(request, "skola/pridaj_uzivatel.html")
+
+    if request.method == "POST":
+        form = PokusnyKralikForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            return HttpResponse("ahoj")
+        
+    else:
+        form = PokusnyKralikForm()
